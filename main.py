@@ -18,13 +18,15 @@ response = requests.get(api_server, params=params)
 pygame.init()
 size = width, height = 1000, 1000
 screen = pygame.display.set_mode(size)
-playing = True
+running = True
 with open("map.png", "wb") as file:
     file.write(response.content)
 while playing:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
-        if event.type == pygame.MOUSEBUTTONDOWN:
+            running = False
+        else:
             fon = pygame.transform.scale(load_image('map.png'), (1000, 1000))
             screen.blit(fon, (0, 0))
+     pygame.display.flip()
+pygame.quit()
