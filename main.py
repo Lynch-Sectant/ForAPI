@@ -25,8 +25,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        else:
-            fon = pygame.transform.scale(load_image('map.png'), (1500, 1000))
-            screen.blit(fon, (0, 0))
+        fon = pygame.transform.scale(load_image('map.png'), (1500, 1000))
+        screen.blit(fon, (0, 0))
     pygame.display.flip()
 pygame.quit()
