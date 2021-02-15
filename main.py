@@ -11,8 +11,8 @@ def load_image(name, colorkey=None):
 
 api_server = "http://static-maps.yandex.ru/1.x/"
 params = {
-    "ll": ",".join([0, 0]),
-    "spn": ",".join([90, 90]),
+    "ll": ",".join(['0', '0']),
+    "spn": ",".join(['90', '90']),
     "l": "map"}
 response = requests.get(api_server, params=params)
 pygame.init()
@@ -26,4 +26,5 @@ while playing:
         if event.type == pygame.QUIT:
             pygame.quit()
         if event.type == pygame.MOUSEBUTTONDOWN:
-            pass
+            fon = pygame.transform.scale(load_image('map.png'), (1000, 1000))
+            screen.blit(fon, (0, 0))
