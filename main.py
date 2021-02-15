@@ -1,5 +1,5 @@
 import pygame
-import requsts
+import requests
 
 
 def load_image(name, colorkey=None):
@@ -28,5 +28,5 @@ while playing:
         else:
             fon = pygame.transform.scale(load_image('map.png'), (1000, 1000))
             screen.blit(fon, (0, 0))
-     pygame.display.flip()
+    pygame.display.flip()
 pygame.quit()
