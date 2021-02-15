@@ -2,6 +2,13 @@ import pygame
 import requsts
 
 
+def load_image(name, colorkey=None):
+    fullname = (name)
+    # если файл не существует, то выходим
+    image = pygame.image.load(fullname)
+    return image
+
+
 api_server = "http://static-maps.yandex.ru/1.x/"
 params = {
     "ll": ",".join([0, 0]),
