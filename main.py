@@ -8,11 +8,11 @@ def load_image(name, colorkey=None):
     image = pygame.image.load(fullname)
     return image
 
-
+scale = 90
 api_server = "http://static-maps.yandex.ru/1.x/"
 params = {
     "ll": ",".join(['0', '0']),
-    "spn": ",".join(['90', '90']),
+    "spn": ",".join([f'{scale}', f'{scale}']),
     "l": "map"}
 response = requests.get(api_server, params=params)
 pygame.init()
