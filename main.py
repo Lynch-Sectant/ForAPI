@@ -8,15 +8,6 @@ params = {
     "spn": ",".join([90, 90]),
     "l": "map"}
 response = requests.get(api_server, params=params)
-
-
-def load_image(name, colorkey=None):
-    fullname = (name)
-    # если файл не существует, то выходим
-    image = pygame.image.load(fullname)
-    return image
-
-
 pygame.init()
 size = width, height = 1000, 1000
 screen = pygame.display.set_mode(size)
