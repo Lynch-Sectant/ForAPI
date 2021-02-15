@@ -1,6 +1,7 @@
 import pygame
 import requsts
 
+
 api_server = "http://static-maps.yandex.ru/1.x/"
 params = {
     "ll": ",".join([0, 0]),
