@@ -10,9 +10,11 @@ def load_image(name, colorkey=None):
 
 
 scale = 90
+x = 0
+y = 0
 api_server = "http://static-maps.yandex.ru/1.x/"
 params = {
-    "ll": ",".join(['0', '0']),
+    "ll": ",".join([str(x), str(y)]),
     "spn": ",".join([f'{scale}', f'{scale}']),
     "l": "map"}
 response = requests.get(api_server, params=params)
@@ -33,6 +35,14 @@ while running:
             if event.key == pygame.K_PAGEDOWN:
                 if scale != 0:
                     scale -= 10
+            if event.key == pygame.K_LEFT:
+                x -= scale / 2
+            if event.key == pygame.K_UP:
+                y += scale / 2
+            if event.key == pygame.K_RIGHT:
+                x += scale / 2
+            if event.key == pygame.K_DOWN:
+                y -= scale / 2
             params["spn"] = ",".join([f'{scale}', f'{scale}'])
             response = requests.get(api_server, params=params)
             pygame.init()
